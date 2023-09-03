@@ -12,28 +12,29 @@
 body {
     display: flex;
     align-items: center;
-    color: #3a3a3a;
-    background: #ffffff;
-    font-family: 'Lota', sans-serif;
-    min-height: 100vh;
     justify-content: center;
+    min-height: 100vh;
 
 }
 
 /* Style Game area */
 .wrapper {
-    background: rgba(2, 2, 27, 0.425);
-    height: 80vmin;
-    width: 70vmin;
-    border-radius: 5px;
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
+    border-radius: 5px;
+    background: #3a3a3a;
     box-shadow: 0 2px 2px #3a3a3a;
 }
 
+/* Score area */
 .game-details {
-    color: white;
-    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
     padding: 20px 27px;
     display: flex;
     justify-content: space-between;
@@ -41,9 +42,50 @@ body {
 
 /* Play Board */
 .play-board {
-    max-width: 512px;
-    max-height: 512px;
+    height: 100%;
+    width: 100%;
     display: grid;
-    background: #212837;
-    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    background: #3a3a3a;
+    grid-template: repeat(40, 1fr) / repeat(40, 1fr);
+}
+
+/* Snake food */
+
+/* Snake head */
+
+/* Arrow Control */
+.controls {
+    display: none;
+    justify-content: space-between;
+}
+
+.controls i {
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    width: calc(100% / 4);
+    cursor: pointer;
+}
+ 
+/* Media query for tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 70vmin;
+        height: 100vmin;
+    }
+
+    .game-details {
+        font-size: 2rem;
+        padding: 15px 27px;
+    }
+
+    .controls {
+        display: flex;
+    }
+
+    .controls i {
+        padding: 15px 0;
+        font-size: 2rem;
+    }
 }
