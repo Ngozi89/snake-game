@@ -1,16 +1,18 @@
 let playBoard = document.querySelector(".play-board");
-let scoreElement = document.querySelector(".score");
-let highScoreElement = document.querySelector(".high-score");
-let controls = document.querySelectorAll(".controls i");
 
-let foodA = 15, foodB = 12;
+let foodX, foodY;
+let snakeX = 5, snakeY = 10;
 
-//Creates two random numbers between 1 and 20
-foodA = Math.floor(Math.random() * 20) + 1;
-foodB = Math.floor(Math.random() * 20) + 1;
+let changeFoodPosition = () => {
+    //Creates two random numbers between 0 and 20
+    foodX = Math.floor(Math.random() * 30) + 1;
+    foodY = Math.floor(Math.random() * 30) + 1;
+}
 
 let initGame = () => {
-    let htmlMarkup = `<div class="food" style="grid-area: ${foodA} / ${foodB}"></div>`;
+    let htmlMarkup = `<div class="food" style="grid-area: ${foodX} / ${foodY}"></div>`;
+    htmlMarkup += `<div class="head" style="grid-area: ${foodX} / ${foodY}"></div>`;
     playBoard.innerHTML = htmlMarkup;
 }
+changeFoodPosition
 initGame();

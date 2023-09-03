@@ -54,6 +54,9 @@ body {
 }
 
 /* Snake head */
+.play-board .head {
+    background: #03e950;
+}
 
 /* Arrow Control */
 .controls {
