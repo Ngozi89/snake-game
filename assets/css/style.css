@@ -49,8 +49,14 @@ body {
 }
 
 /* Snake food */
+.play-board .food {
+    background: #FF003D;
+}
 
 /* Snake head */
+
+
+/* Snake food */
 
 /* Arrow Control */
 .controls {
