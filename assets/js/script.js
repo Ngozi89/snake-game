@@ -12,6 +12,10 @@ let snakeBody = [];
 let setIntervalId;
 let score = 0;
 
+// Get high score from local storage
+let highScore = localStorage.getItem("high-score") || 0;
+highScoreElement.innerText = `High Score: ${highScore}`;
+
 let changeFoodPosition = () => {
     //Creates two random numbers between 0 and 20 using developers tool
     foodA = Math.floor(Math.random() * 20) + 1;
