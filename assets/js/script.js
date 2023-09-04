@@ -4,7 +4,7 @@ let highScoreElement = document.querySelector(".high-score");
 let controls = document.querySelectorAll(".controls i");
 
 let foodA = 10, foodB = 15;
-let snakeA = 5, snakeB = 10;
+let snakeA =10, snakeB =15;
 // Make the snake move using velocity
 let velocityA = 0, velocityB = 0;
 
@@ -31,6 +31,8 @@ if (e.key === "ArrowLeft" && velocityA != 1) {
     velocityB = 0;
 }
 }
+
+initGame();
 
 
 let initGame = () => {
