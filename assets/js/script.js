@@ -7,6 +7,10 @@ let foodA = 10, foodB = 15;
 let snakeA =10, snakeB =15;
 // Make the snake move using velocity
 let velocityA = 0, velocityB = 0;
+// Add snakebody to make the snake grow as it eats
+let snakeBody = [];
+let setIntervalId;
+let score = 0;
 
 let changeFoodPosition = () => {
     //Creates two random numbers between 0 and 20 using developers tool
