@@ -40,8 +40,6 @@ if (e.key === "ArrowLeft" && velocityA != 1) {
 }
 }
 
-initGame();
-
 
 let initGame = () => {
     let htmlMarkup = `<div class="food" style="grid-area: ${foodA} / ${foodB}"></div>`;
@@ -51,6 +49,17 @@ let initGame = () => {
     htmlMarkup += `<div class="head" style="grid-area: ${foodA} / ${foodB}"></div>`;
     playBoard.innerHTML = htmlMarkup;
 };
+
+// Check if the snake eat the food and push food and increment score by 1
+if (snakeA === foodA && snakeB === foodB) {
+    updateFoodPosition();
+    snakeBody.push([foodB, foodA]);
+    score++;
+    highScore = score >= highScore ? score : highScore;
+    localStorage.setItem("high-score", highScore);
+    scoreElement.innerText = `Score: ${score}`;
+    highScoreElement.innerText = `High Score: ${highScore}`;
+}
 changeFoodPosition;
 initGame();
 // Add document event listner for the key arrow and call the key arrow to change direction
