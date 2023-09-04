@@ -22,8 +22,17 @@ let changeFoodPosition = () => {
     foodB = Math.floor(Math.random() * 20) + 1;
 };
 
+// Add GameOver
+let handleGameOver = () => {
+    // Clear the timer and reload the page when game over
+    clearInterval(setIntervalId);
+    alert("Game Over! Press OK to replay");
+    location.reload();
+};
+
+
 let changeDirection = e => {
-console.log (e);
+console.log(e)
 // Change value using velocity for motion on arrow key pressed using if and else if
 if (e.key === "ArrowLeft" && velocityA != 1) {
     velocityA = 0;
